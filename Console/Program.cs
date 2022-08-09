@@ -7,14 +7,25 @@ using System.Threading.Tasks;
 namespace nsConsole
 {
     internal class Program
-    {
+    {             
+        static string[] ArrayInputFromConsole(in int countArr, string textMessage)
+        {
+            var ArrayOut = new string[countArr];
+            for (int i = 0; i < countArr; i++)
+            {
+                Console.WriteLine(textMessage);
+                ArrayOut[i] = Console.ReadLine();
+            }
+            return ArrayOut;
+        }
         static bool CheckEnter(in string sData, out int iData)
-        {            
+        {
+            iData = 0;
             return Int32.TryParse(sData, out iData);
         }
-        static (string FirstName, string LastName, int Age, int CountPet, string[] NamePet) InfoOwnerAndPet()
+        static (string FirstName, string LastName, int Age, int CountPet, string[] NamePet, int CountColor, string[] NameColor) GetInfoOwnerAndPet()
         {
-            (string FirstName, string LastName, int Age, int CountPet, string[] NamePet) IOAP;
+            (string FirstName, string LastName, int Age, int CountPet, string[] NamePet, int CountColor, string[] NameColor) IOAP;
 
             Console.WriteLine("Введите свое имя:");
             IOAP.FirstName = Console.ReadLine();
@@ -23,43 +34,57 @@ namespace nsConsole
             IOAP.LastName = Console.ReadLine();
 
             Console.WriteLine("Введите свой возраст:");
-            string inputString = Console.ReadLine();
-            int age;                        
-            while(!CheckEnter(inputString, out age) || (age == 0))
+            string inputString = Console.ReadLine();                                    
+            while(!CheckEnter(inputString, out IOAP.Age) || (IOAP.Age == 0))
             {
                 Console.WriteLine("Введите свой возраст:");
                 inputString = Console.ReadLine();
-            }
-            IOAP.Age = age;
+            }            
+            
             Console.WriteLine("У Вас есть питомец? Y/N");
-            int _countPet = 0;
             if (Console.ReadLine().ToUpper().Equals("Y"))
-            {                
+            {
                 Console.WriteLine("Введите количество питомцев:");
                 inputString = Console.ReadLine();
-                while (!CheckEnter(inputString, out _countPet) && (_countPet > 0))
+                while (!CheckEnter(inputString, out IOAP.CountPet) && (IOAP.CountPet > 0))
                 {
                     Console.WriteLine("Вы подтвердили, что у Вас есть питомцы, напишите их количество цифрами:");
                     inputString = Console.ReadLine();
                 }
             }
-            IOAP.CountPet = _countPet;
-            IOAP.NamePet = new string[_countPet];
-            for (int i=0; i < _countPet ; i++)
+            else
+                IOAP.CountPet = 0;
+
+            IOAP.NamePet = ArrayInputFromConsole(IOAP.CountPet, "Введите кличку питомца:");
+            Console.WriteLine("Введите количество любимых цветов:");            
+            inputString = Console.ReadLine();
+            while (!CheckEnter(inputString, out IOAP.CountColor) && (IOAP.CountColor > 0))
             {
-                Console.WriteLine("Введите кличку питомца:");               
-                IOAP.NamePet[i] = Console.ReadLine(); 
+                Console.WriteLine("Напишите количество цифрами:");
+                inputString = Console.ReadLine();
             }
+            IOAP.NameColor = ArrayInputFromConsole(IOAP.CountColor, "Напишите название любимого цвета:");
+
             return IOAP;            
         }
-        static void ShowMessageToConsole(ref myPets)
+        static void ShowMessageToConsole((string FirstName, string LastName, int Age, int CountPet, string[] NamePet, int CountColor, string[] NameColor) IOAP)
         {
-            myPets
+            Console.WriteLine($"Анкета {IOAP.FirstName} {IOAP.LastName}");
+            Console.WriteLine($"Возраст {IOAP.Age} \n Количество питомцев {IOAP.CountPet} \n Клички питомцев:");
+            foreach(string nickname in IOAP.NamePet)
+            {
+                Console.WriteLine(nickname + "\n");
+            }
+            Console.WriteLine("Любимые цвета:");
+            foreach (string colorname in IOAP.NameColor)
+            {
+                Console.WriteLine(colorname + "\n");
+            }
         }
-       static void Main(string[] args)
-        {
-            public var MyFamalyAndOtherPets = InfoOwnerAndPet();
-            //ShowMessageToConsole(ref MyFamalyAndOtherPets);
+        static void Main(string[] args)
+        {            
+            ShowMessageToConsole(GetInfoOwnerAndPet());
+            Console.WriteLine("Для выхода из программы нажмите любую клавишу");
             Console.ReadKey();
             
             #region
