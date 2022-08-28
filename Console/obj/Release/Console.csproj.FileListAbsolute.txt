@@ -1,0 +1,8 @@
+G:\SF\SF\Console\bin\Release\Console.exe.config
+G:\SF\SF\Console\bin\Release\Console.exe
+G:\SF\SF\Console\bin\Release\Console.pdb
+G:\SF\SF\Console\obj\Release\Console.csproj.AssemblyReference.cache
+G:\SF\SF\Console\obj\Release\Console.csproj.SuggestedBindingRedirects.cache
+G:\SF\SF\Console\obj\Release\Console.csproj.CoreCompileInputs.cache
+G:\SF\SF\Console\obj\Release\Console.exe
+G:\SF\SF\Console\obj\Release\Console.pdb

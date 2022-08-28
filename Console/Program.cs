@@ -21,27 +21,75 @@ namespace nsConsole
     }
     public abstract class Delivery
     {
-        public string Address;
+        public string Address; 
+        public void Move(string name)
+        {            
+            Console.WriteLine("Заказ {0} для доставки по адресу: {1} у курьера.", name, Address);
+        }
+    }
+    public class Courier
+    {        
+        public virtual bool Traffic(string route)
+        {
+            return false;
+        }
+    }
+    public class BikeCourier : Courier
+    {
+        private string Bike = "TREK";
+        public override bool Traffic(string route)
+        {            
+            return route != Bike;            
+        }
+        protected double Speed;        
+    }
+    public class PostCourier : Courier
+    {
+        public override bool Traffic(string route)
+        {
+            if (postageStamp)
+                Speed = +1;           
+            else
+                Speed = 0;
+            return (Speed > 0);
+        }
+        public double Speed;       
+        private bool postageStamp = false;
+    }
+    public class CarCourier:Courier
+    {
+        private string Car = "Lada";
+        public override bool Traffic(string route)
+        {            
+            return route != Car;
+        }
+        protected double Speed;        
     }
     public class HomeDelivery : Delivery
     {
-        public void Move(string adress)
+        private BikeCourier courier;     
+        public HomeDelivery()
         {
-            Address = adress;
+            courier = new BikeCourier();
+            Console.WriteLine("Вы выбрали доставку на дом");
         }
     }
     public class PickPointDelivery : Delivery
     {
-        public void Move(string adress)
+        private PostCourier courier;
+        public PickPointDelivery()
         {
-            Address = adress;
+            courier = new PostCourier();
+            Console.WriteLine("Вы выбрали доставку в пункт выдачи");
         }
     }
     public class ShopDelivery : Delivery
     {
-        public void Move(string adress)
+        private CarCourier courier;
+        public ShopDelivery()
         {
-            Address = adress;
+            courier = new CarCourier();
+            Console.WriteLine("Вы выбрали доставку в магазин");
         }
     }
 
@@ -103,13 +151,12 @@ namespace nsConsole
         public static int GlobalID = 0;
         private int id;
         public int ID { get { return id; } }
-
     }
     internal class Program
     {
         static void Main(string[] args)
         {
-            //Создание товаров
+            //Создание товаров в магазине
             Product tools = new ProductTools("лопата", 500m, "садовый инвентарь");
             Product games = new ProductGames("шашки", 800m, true);
             Product foods = new ProductFood("молоко", 75m, 1, 24);
@@ -119,18 +166,20 @@ namespace nsConsole
             Delivery myDelivery = new HomeDelivery();
             //Оформление заказа
             Order < Delivery, Product> order = new Order<Delivery, Product>(myDelivery, tools, 2);
+            order.MyDelivery.Address = "\'а/я 500\'";            
+            order.MyDelivery.Move(order.MyProduct.Name);            
             MyOrder.Add(order);
-            
-            //Выбор способа доставки заказа
-            myDelivery = new PickPointDelivery();
-            //Оформление заказа
+
+            myDelivery = new PickPointDelivery();            
             order = new Order<Delivery, Product>(myDelivery, games,1);
+            order.MyDelivery.Address = "\'На деревню дедушке\'";           
+            order.MyDelivery.Move(order.MyProduct.Name);
             MyOrder.Add(order);
-            
-            //Выбор способа доставки заказа
+
             myDelivery = new ShopDelivery();
-            //Оформление заказа
             order = new Order<Delivery, Product>(myDelivery, foods,7);
+            order.MyDelivery.Address = "\'OZON\'";
+            order.MyDelivery.Move(order.MyProduct.Name);
             MyOrder.Add(order);
 
             Console.ReadKey();
