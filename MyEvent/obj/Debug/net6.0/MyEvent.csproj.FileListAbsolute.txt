@@ -1,0 +1,15 @@
+G:\SF\SF\MyEvent\obj\Debug\net6.0\MyEvent.csproj.AssemblyReference.cache
+G:\SF\SF\MyEvent\obj\Debug\net6.0\MyEvent.GeneratedMSBuildEditorConfig.editorconfig
+G:\SF\SF\MyEvent\obj\Debug\net6.0\MyEvent.AssemblyInfoInputs.cache
+G:\SF\SF\MyEvent\obj\Debug\net6.0\MyEvent.AssemblyInfo.cs
+G:\SF\SF\MyEvent\obj\Debug\net6.0\MyEvent.csproj.CoreCompileInputs.cache
+G:\SF\SF\MyEvent\bin\Debug\net6.0\MyEvent.exe
+G:\SF\SF\MyEvent\bin\Debug\net6.0\MyEvent.deps.json
+G:\SF\SF\MyEvent\bin\Debug\net6.0\MyEvent.runtimeconfig.json
+G:\SF\SF\MyEvent\bin\Debug\net6.0\MyEvent.dll
+G:\SF\SF\MyEvent\bin\Debug\net6.0\MyEvent.pdb
+G:\SF\SF\MyEvent\obj\Debug\net6.0\MyEvent.dll
+G:\SF\SF\MyEvent\obj\Debug\net6.0\refint\MyEvent.dll
+G:\SF\SF\MyEvent\obj\Debug\net6.0\MyEvent.pdb
+G:\SF\SF\MyEvent\obj\Debug\net6.0\MyEvent.genruntimeconfig.cache
+G:\SF\SF\MyEvent\obj\Debug\net6.0\ref\MyEvent.dll
