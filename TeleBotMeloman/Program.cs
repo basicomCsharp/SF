@@ -3,6 +3,7 @@ using Microsoft.Extensions.Hosting;
 using System.Text;
 using TeleBotMeloman;
 using Telegram.Bot;
+using TeleBot.Controllers;
 
 //Cчитаем, что Main где то спрятался от нас, вернее его спрятали индусские программисты,
 // чтобы мы не писали всякие аргументы ;)
@@ -22,6 +23,11 @@ using Telegram.Bot;
 
 static void ConfigureServices(IServiceCollection services)
 {
+    // Подключаем контроллеры сообщений и кнопок
+    services.AddTransient<DefaultMessageController>();  
+    services.AddTransient<TextMessageController>();
+    services.AddTransient<InlineKeyboardController>();
+
     // Регистрируем объект TelegramBotClient c токеном подключения MelomanTeleBot:
     services.AddSingleton<ITelegramBotClient>(provider => new TelegramBotClient("5705080055:AAFhAZlIuBTWU8f2rzE1KEtEu098fNEYLn0"));
     // Регистрируем постоянно активный сервис бота
