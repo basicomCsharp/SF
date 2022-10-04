@@ -71,6 +71,10 @@ namespace TeleBotMeloman
             // Обрабатываем входящие сообщения из Telegram Bot API: https://core.telegram.org/bots/api#message
             if (update.Type == UpdateType.Message)
             {
+                //if (update.Message.Text == "/getweather")
+                //{
+                //    // Отправляем в ответ погоду
+                //}
                 switch (update.Message!.Type)
                 {
                     case MessageType.Text:
