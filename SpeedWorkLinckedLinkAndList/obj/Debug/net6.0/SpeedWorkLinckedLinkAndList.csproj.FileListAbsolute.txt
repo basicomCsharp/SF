@@ -1,0 +1,15 @@
+G:\SF\SF\SpeedWorkLinckedLinkAndList\bin\Debug\net6.0\SpeedWorkLinckedLinkAndList.exe
+G:\SF\SF\SpeedWorkLinckedLinkAndList\bin\Debug\net6.0\SpeedWorkLinckedLinkAndList.deps.json
+G:\SF\SF\SpeedWorkLinckedLinkAndList\bin\Debug\net6.0\SpeedWorkLinckedLinkAndList.runtimeconfig.json
+G:\SF\SF\SpeedWorkLinckedLinkAndList\bin\Debug\net6.0\SpeedWorkLinckedLinkAndList.dll
+G:\SF\SF\SpeedWorkLinckedLinkAndList\bin\Debug\net6.0\SpeedWorkLinckedLinkAndList.pdb
+G:\SF\SF\SpeedWorkLinckedLinkAndList\obj\Debug\net6.0\SpeedWorkLinckedLinkAndList.csproj.AssemblyReference.cache
+G:\SF\SF\SpeedWorkLinckedLinkAndList\obj\Debug\net6.0\SpeedWorkLinckedLinkAndList.GeneratedMSBuildEditorConfig.editorconfig
+G:\SF\SF\SpeedWorkLinckedLinkAndList\obj\Debug\net6.0\SpeedWorkLinckedLinkAndList.AssemblyInfoInputs.cache
+G:\SF\SF\SpeedWorkLinckedLinkAndList\obj\Debug\net6.0\SpeedWorkLinckedLinkAndList.AssemblyInfo.cs
+G:\SF\SF\SpeedWorkLinckedLinkAndList\obj\Debug\net6.0\SpeedWorkLinckedLinkAndList.csproj.CoreCompileInputs.cache
+G:\SF\SF\SpeedWorkLinckedLinkAndList\obj\Debug\net6.0\SpeedWorkLinckedLinkAndList.dll
+G:\SF\SF\SpeedWorkLinckedLinkAndList\obj\Debug\net6.0\refint\SpeedWorkLinckedLinkAndList.dll
+G:\SF\SF\SpeedWorkLinckedLinkAndList\obj\Debug\net6.0\SpeedWorkLinckedLinkAndList.pdb
+G:\SF\SF\SpeedWorkLinckedLinkAndList\obj\Debug\net6.0\SpeedWorkLinckedLinkAndList.genruntimeconfig.cache
+G:\SF\SF\SpeedWorkLinckedLinkAndList\obj\Debug\net6.0\ref\SpeedWorkLinckedLinkAndList.dll

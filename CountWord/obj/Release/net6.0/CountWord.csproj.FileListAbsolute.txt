@@ -1,0 +1,15 @@
+G:\SF\SF\CountWord\bin\Release\net6.0\CountWord.exe
+G:\SF\SF\CountWord\bin\Release\net6.0\CountWord.deps.json
+G:\SF\SF\CountWord\bin\Release\net6.0\CountWord.runtimeconfig.json
+G:\SF\SF\CountWord\bin\Release\net6.0\CountWord.dll
+G:\SF\SF\CountWord\bin\Release\net6.0\CountWord.pdb
+G:\SF\SF\CountWord\obj\Release\net6.0\CountWord.csproj.AssemblyReference.cache
+G:\SF\SF\CountWord\obj\Release\net6.0\CountWord.GeneratedMSBuildEditorConfig.editorconfig
+G:\SF\SF\CountWord\obj\Release\net6.0\CountWord.AssemblyInfoInputs.cache
+G:\SF\SF\CountWord\obj\Release\net6.0\CountWord.AssemblyInfo.cs
+G:\SF\SF\CountWord\obj\Release\net6.0\CountWord.csproj.CoreCompileInputs.cache
+G:\SF\SF\CountWord\obj\Release\net6.0\CountWord.dll
+G:\SF\SF\CountWord\obj\Release\net6.0\refint\CountWord.dll
+G:\SF\SF\CountWord\obj\Release\net6.0\CountWord.pdb
+G:\SF\SF\CountWord\obj\Release\net6.0\CountWord.genruntimeconfig.cache
+G:\SF\SF\CountWord\obj\Release\net6.0\ref\CountWord.dll
