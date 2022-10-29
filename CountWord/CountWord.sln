@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedWorkLinkAndLinckedLink
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedWorkLinckedLinkAndList", "..\SpeedWorkLinckedLinkAndList\SpeedWorkLinckedLinkAndList.csproj", "{314FCA42-43D4-41E8-B9FD-A771874BAABD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountWordOriginal", "..\CountWordOriginal\CountWordOriginal.csproj", "{2CAAFE8B-9CAE-488D-864F-8F293BE467F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountWordOriginal", "..\CountWordOriginal\CountWordOriginal.csproj", "{2CAAFE8B-9CAE-488D-864F-8F293BE467F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ14", "..\LINQ14\LINQ14.csproj", "{75FE15D1-7E5C-4388-B735-A50CA048895A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2CAAFE8B-9CAE-488D-864F-8F293BE467F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CAAFE8B-9CAE-488D-864F-8F293BE467F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CAAFE8B-9CAE-488D-864F-8F293BE467F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75FE15D1-7E5C-4388-B735-A50CA048895A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75FE15D1-7E5C-4388-B735-A50CA048895A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75FE15D1-7E5C-4388-B735-A50CA048895A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75FE15D1-7E5C-4388-B735-A50CA048895A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
