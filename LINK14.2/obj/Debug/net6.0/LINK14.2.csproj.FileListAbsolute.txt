@@ -1,0 +1,15 @@
+G:\SF\SF\LINK14.2\bin\Debug\net6.0\LINK14.2.exe
+G:\SF\SF\LINK14.2\bin\Debug\net6.0\LINK14.2.deps.json
+G:\SF\SF\LINK14.2\bin\Debug\net6.0\LINK14.2.runtimeconfig.json
+G:\SF\SF\LINK14.2\bin\Debug\net6.0\LINK14.2.dll
+G:\SF\SF\LINK14.2\bin\Debug\net6.0\LINK14.2.pdb
+G:\SF\SF\LINK14.2\obj\Debug\net6.0\LINK14.2.csproj.AssemblyReference.cache
+G:\SF\SF\LINK14.2\obj\Debug\net6.0\LINK14.2.GeneratedMSBuildEditorConfig.editorconfig
+G:\SF\SF\LINK14.2\obj\Debug\net6.0\LINK14.2.AssemblyInfoInputs.cache
+G:\SF\SF\LINK14.2\obj\Debug\net6.0\LINK14.2.AssemblyInfo.cs
+G:\SF\SF\LINK14.2\obj\Debug\net6.0\LINK14.2.csproj.CoreCompileInputs.cache
+G:\SF\SF\LINK14.2\obj\Debug\net6.0\LINK14.2.dll
+G:\SF\SF\LINK14.2\obj\Debug\net6.0\refint\LINK14.2.dll
+G:\SF\SF\LINK14.2\obj\Debug\net6.0\LINK14.2.pdb
+G:\SF\SF\LINK14.2\obj\Debug\net6.0\LINK14.2.genruntimeconfig.cache
+G:\SF\SF\LINK14.2\obj\Debug\net6.0\ref\LINK14.2.dll
