@@ -1,0 +1,12 @@
+G:\SF\SF\Practices\bin\Debug\net6.0\Practices.deps.json
+G:\SF\SF\Practices\bin\Debug\net6.0\Practices.dll
+G:\SF\SF\Practices\bin\Debug\net6.0\Practices.pdb
+G:\SF\SF\Practices\obj\Debug\net6.0\Practices.csproj.AssemblyReference.cache
+G:\SF\SF\Practices\obj\Debug\net6.0\Practices.GeneratedMSBuildEditorConfig.editorconfig
+G:\SF\SF\Practices\obj\Debug\net6.0\Practices.AssemblyInfoInputs.cache
+G:\SF\SF\Practices\obj\Debug\net6.0\Practices.AssemblyInfo.cs
+G:\SF\SF\Practices\obj\Debug\net6.0\Practices.csproj.CoreCompileInputs.cache
+G:\SF\SF\Practices\obj\Debug\net6.0\Practices.dll
+G:\SF\SF\Practices\obj\Debug\net6.0\refint\Practices.dll
+G:\SF\SF\Practices\obj\Debug\net6.0\Practices.pdb
+G:\SF\SF\Practices\obj\Debug\net6.0\ref\Practices.dll
