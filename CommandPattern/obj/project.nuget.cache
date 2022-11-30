@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "aJxWULR0KCYTNPehrQ10DozXI/SX1n0tP1ZZfU5UepppYjbOufxyjVqhjZ6A6zSiTXbMmPF0+MxBZFHmIL5Dcw==",
+  "success": true,
+  "projectFilePath": "G:\\SF\\SF\\CommandPattern\\CommandPattern.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Андрей\\.nuget\\packages\\anglesharp\\0.17.0\\anglesharp.0.17.0.nupkg.sha512",
+    "C:\\Users\\Андрей\\.nuget\\packages\\cliwrap\\3.5.0\\cliwrap.3.5.0.nupkg.sha512",
+    "C:\\Users\\Андрей\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Андрей\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\Андрей\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512",
+    "C:\\Users\\Андрей\\.nuget\\packages\\youtubeexplode\\6.2.4\\youtubeexplode.6.2.4.nupkg.sha512",
+    "C:\\Users\\Андрей\\.nuget\\packages\\youtubeexplode.converter\\6.2.4\\youtubeexplode.converter.6.2.4.nupkg.sha512"
+  ],
+  "logs": []
+}
