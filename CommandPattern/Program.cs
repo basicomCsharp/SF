@@ -139,41 +139,48 @@ namespace CommandPattern
     /// </summary>
     class Program
     {
-        public static async Task InfoForVideo(string videoUrl = "https://www.youtube.com/watch?v=1La4QzGeaaQ")
+        public static void InfoForVideo(string videoUrl = "https://www.youtube.com/watch?v=1La4QzGeaaQ")
         {
             try
             {
                 Console.WriteLine("Информация о видео:");
                 YoutubeClient client = new YoutubeClient();
-                var video = await client.Videos.GetAsync(videoUrl);
-                Console.WriteLine($"Название: {video.Title}");
-                Console.WriteLine($"Продолжительность: {video.Duration}");
-                Console.WriteLine($"Автор: {video.Author}");
+                var video =  client.Videos.GetAsync(videoUrl);
+                Console.WriteLine($"Название: {video.Result.Title}");
+                Console.WriteLine($"Продолжительность: {video.Result.Duration}");
+                Console.WriteLine($"Автор: {video.Result.Author}");
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
         }
-        public static async Task DownloadVideo(string videoUrl = "https://www.youtube.com/watch?v=2ElTIOJ6Qbs&t=20s", string outputFilePath = "G:\\video\\SF\\")
+        public static void DownloadVideo(string videoUrl = "https://www.youtube.com/watch?v=2ElTIOJ6Qbs&t=20s", string outputFilePath = "G:\\video\\SF\\")
         {
             YoutubeClient client = new YoutubeClient();
 
-            var streamManifest = await client.Videos.Streams.GetManifestAsync(videoUrl);
+            var streamManifest = client.Videos.Streams.GetManifestAsync(videoUrl);
             // Get highest quality muxed stream
-            var streamInfo = streamManifest.GetMuxedStreams().GetWithHighestVideoQuality();
+            var streamInfo = streamManifest.Result.GetMuxedStreams().GetWithHighestVideoQuality();
             // ...or highest quality MP4 video-only stream
             //var streamInfo = streamManifest
             //    .GetVideoOnlyStreams()
             //    .Where(s => s.Container == Container.Mp4)
             //    .GetWithHighestVideoQuality();
-            await client.Videos.Streams.DownloadAsync(streamInfo, outputFilePath);
+            client.Videos.Streams.DownloadAsync(streamInfo, outputFilePath);
         }
         public static string videoUrl = String.Empty;
         public static void Main()
         {
+            //Console.WriteLine("Информация о видео:");
+            //YoutubeClient client = new YoutubeClient();
+            //var video = client.Videos.GetAsync("https://www.youtube.com/watch?v=SV7NImkKd2Q");
+            //Console.WriteLine($"Название: {video.Result.Title}");
+            //Console.WriteLine($"Продолжительность: {video.Result.Duration}");
+            //Console.WriteLine($"Автор: {video.Result.Author}");
 
             // создадим отправителя 
+            
             var sender = new Sender();
 
             // создадим получателя 
