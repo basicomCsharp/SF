@@ -11,7 +11,7 @@ namespace SocialNetwork.PLL.Helpers
         public static void Show(string message)
         {
             ConsoleColor originalColor = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine(message);
             Console.ForegroundColor = originalColor;
         }
