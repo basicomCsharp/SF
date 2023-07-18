@@ -4,69 +4,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EFCore
+namespace BlogSF
 {
     public class UserRepository
     {
-        /// <summary>
-        /// Выбор всех читателей
-        /// </summary>
-        public List<User> SelectAllUsers()
+        public bool Create(Tag tag)
         {
             using (var db = new AppContext())
             {                
-                return db.Users.ToList();
-            }
-        }
-        /// <summary>
-        /// Выбор читателя по id
-        /// </summary>
-        /// <param name="id"></param>
-        public User SelectUserId(int id)
-        {
-            using (var db = new AppContext())
-            {               
-               return db.Users.Where(user => user.Id == id).FirstOrDefault();
-            }
-        }
-        /// <summary>
-        /// Изменение имени читателя по id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public bool UpdateNameUser(int id, string name)
-        {
-            using (var db = new AppContext())
-            {
-                var _user = db.Users.Where(user => user.Id == id).FirstOrDefault();
-                _user.Name = name;
-                return true;
-            }
-        }
-        /// <summary>
-        /// Добавление читателя
-        /// </summary>
-        /// <param name="user">читатель</param>
-        public bool AddUser(User user)
-        {
-            using (var db = new AppContext())
-            {                
-                var AddUser = db.Users.Add(user);
+                var addtag = db.Tags.Add(tag);
                 db.SaveChanges();
                 return true;
             }
         }
-        /// <summary>
-        /// Удаление читатателя
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public bool DeleteUser(User id)
+        
+        public bool Read(int id, out Tag tag)
         {
             using (var db = new AppContext())
             {
-                var DelUser = db.Users.Remove(id);
+                tag = db.Tags.Where(u => u.Id == id).FirstOrDefault();
+                db.SaveChanges();
+                return tag != null;
+            }
+        }
+        
+        public bool Update(int id, Tag tag)
+        {
+            using (var db = new AppContext())
+            {
+                var _tag = db.Tags.Where(u => u.Id == id).FirstOrDefault();
+                _tag = tag;
+                db.SaveChanges();
+                return true;
+            }
+        }
+        
+        public bool Delete(Tag id)
+        {
+            using (var db = new AppContext())
+            {
+                var deltag = db.Tags.Remove(id);
                 db.SaveChanges();
                 return true;
             }            

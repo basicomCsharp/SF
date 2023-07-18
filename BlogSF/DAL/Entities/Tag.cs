@@ -1,15 +1,18 @@
-﻿using System;
+﻿using Microsoft.Extensions.Hosting;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EFCore
+namespace BlogSF
 {
     public class Tag
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        [Key]
+        public int Id { get; set; }//public Guid Id { get; set; } = Guid.NewGuid();       
+        public string Name { get; set; } = String.Empty;
         public List<Book> Books { get; set; } = new List<Book>();
     }
 }

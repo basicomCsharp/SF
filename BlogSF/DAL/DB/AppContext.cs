@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFCore
+namespace BlogSF
 {
     public class AppContext: DbContext
     {
@@ -23,7 +23,7 @@ namespace EFCore
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(@"Data Source=blog.db");//;Database=EF;Trusted_Connection=True;");            
+            optionsBuilder.UseSqlite(@"Data Source=C:\SF\Mvc\blog.db");//;Database=EF;Trusted_Connection=True;");            
         }
     }
 }
