@@ -1,18 +1,19 @@
-﻿using Microsoft.Extensions.Hosting;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BlogSF
 {
-    public class Tag
+    [Table("Roles")]
+    public class Role
     {
         [Key]
-        public int Id { get; set; }//public Guid Id { get; set; } = Guid.NewGuid();       
-        public string Name { get; set; } = String.Empty;
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public string Name { get; set; } = string.Empty;
         public List<Book> Books { get; set; } = new List<Book>();
     }
 }

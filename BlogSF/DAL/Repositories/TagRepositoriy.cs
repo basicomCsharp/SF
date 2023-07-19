@@ -1,86 +1,39 @@
-﻿namespace BlogSF.DAL.Repositories
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace BlogSF.DAL.Repositories
 {
-    public class TagRepositoriy
-    {
-        /// <summary>
-        /// Выбор всех читателей
-        /// </summary>
-        public List<User> SelectAllUsers()
+    public class TagRepositoriy : IBaseRepositories<Tag>
+    {        
+        private readonly AppContext db;
+        public TagRepositoriy(AppContext contex)
         {
-            using (var db = new AppContext())
-            {
-                return db.Users.ToList();
-            }
+            this.db = contex;
         }
-        /// <summary>
-        /// Выбор читателя по id
-        /// </summary>
-        /// <param name="id"></param>
-        public User SelectUserId(int id)
+        public void Create(Tag value)
         {
-            using (var db = new AppContext())
-            {
-                return db.Users.Where(user => user.Id == id).FirstOrDefault();
-            }
-        }
-        /// <summary>
-        /// Добавление читателя
-        /// </summary>
-        /// <param name="user">читатель</param>
-        public bool Create(User user)
-        {
-            using (var db = new AppContext())
-            {
-                var AddUser = db.Users.Add(user);
-                db.SaveChanges();
-                return true;
-            }
-        }
-        /// <summary>
-        /// Получение пользователя
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        public bool Read(int id, out User user)
-        {
-            using (var db = new AppContext())
-            {
-                user = db.Users.Where(u => u.Id == id).FirstOrDefault();
-                return user != null;
-            }
-        }
-        /// <summary>
-        /// Изменение имени читателя по id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public bool Update(int id, User user)
-        {
-            using (var db = new AppContext())
-            {
-                var _user = db.Users.Where(user => user.Id == id).FirstOrDefault();
-                _user = user;
-                db.SaveChanges();
-                return true;
-            }
+            db.Tags.Add(value);
         }
 
-        /// <summary>
-        /// Удаление читатателя
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public bool Delete(User id)
+        public void Delete(int id)
         {
-            using (var db = new AppContext())
-            {
-                var DelUser = db.Users.Remove(id);
-                db.SaveChanges();
-                return true;
-            }
+            Tag _tag = db.Tags.Find(id);
+            if (_tag != null)
+                db.Tags.Remove(_tag);
         }
 
+        public Tag Get(int id)
+        {
+            return db.Tags.Find(id);
+        }
+
+        public IEnumerable<Tag> GetAll()
+        {
+            return db.Tags;
+        }
+
+        public void Update(Tag value)
+        {
+            db.Entry(value).State = EntityState.Modified;
+        }
     }
 }

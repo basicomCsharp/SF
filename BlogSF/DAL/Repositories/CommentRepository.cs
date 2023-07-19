@@ -1,55 +1,41 @@
-﻿namespace BlogSF.DAL.Repositories
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace BlogSF.DAL.Repositories
 {
-    public class CommentRepository
+    public class CommentRepository : IBaseRepositories<Comment>
     {
-        /// <summary>
-        /// создание комментария
-        /// </summary>
-        /// <param name="comment"></param>
-        /// <returns></returns>
-        public bool Create(Comment comment)
+        private readonly AppContext db;
+        public CommentRepository(AppContext contex)
         {
-            using (var db = new AppContext())
-            {
-                var addcomment = db.Comments.Add(comment);
-                db.SaveChanges();
-                return true;
-            }
+            this.db = contex;
         }
-        /// <summary>
-        /// чтение комментария
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="comment"></param>
-        /// <returns></returns>
-        public bool Read(int id, out Comment comment)
+
+        public IEnumerable<Comment> GetAll()
         {
-            using (var db = new AppContext())
-            {
-                comment = db.Comments.Where(u => u.Id == id).FirstOrDefault();
-                return comment != null;
-            }
+            return db.Comments;
         }
-        public bool Update(int id, Comment comment)
+
+        public Comment Get(int id)
         {
-            using (var db = new AppContext())
-            {
-                var _comment = db.Comments.Where(u => u.Id == id).FirstOrDefault();
-                _comment = comment;
-                db.SaveChanges();
-                return true;
-            }
+            return db.Comments.Find(id);
         }
 
 
-        public bool Delete(Comment id)
+        public void Create(Comment comment)
         {
-            using (var db = new AppContext())
-            {
-                var DelComment = db.Comments.Remove(id);
+            db.Comments.Add(comment);
+            db.SaveChanges();
+        }
+        public void Update(Comment value)
+        {
+            db.Entry(value).State = EntityState.Modified;
+        }
+        public void Delete(int id)
+        {
+            Comment _comment = db.Comments.Find(id);
+            if (_comment != null)
+                db.Comments.Remove(_comment);
                 db.SaveChanges();
-                return true;
-            }
         }
 
     }
