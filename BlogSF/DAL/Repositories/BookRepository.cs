@@ -7,9 +7,9 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlogSF
+namespace BlogSF.DAL.Repositories
 {
-    public class BookRepository : IBaseRepositories<Book>
+    public class BookRepository : IBookRepositories//IBaseRepositories<Book>
     {
         private readonly AppContext db;
         public BookRepository(AppContext contex)
@@ -17,30 +17,35 @@ namespace BlogSF
             this.db = contex;
         }
 
-        public IEnumerable<Book> GetAll()
+        public  async Task<IEnumerable<Book>> GetAll()
         {
-            return db.Books;
+            return await db.Books.ToListAsync();
         }
 
-        public Book Get(int id)
+        public async Task<Book> Get(Guid id)
         {
-            return db.Books.Find(id);
+            return await db.Books.Where(u => u.Id == id).FirstOrDefaultAsync();            
         }
 
-        public void Create(Book book)
-        {            
-            db.Books.Add(book);            
+        public async Task Create(Book book)
+        {
+            var entry = db.Entry(book);
+            if (entry.State == EntityState.Detached)
+              _=  db.Books.AddAsync(book);
+            await db.SaveChangesAsync();
         }
  
-        public void Update(Book value)
+        public async Task Update(Book value)
         {
             db.Entry(value).State = EntityState.Modified;
+            await db.SaveChangesAsync();
         }
-        public void Delete(int id)
+        public async Task Delete(Guid id)
         {
             Book book = db.Books.Find(id);
             if (book != null)
-                db.Books.Remove(book);            
+                db.Books.Remove(book);
+            await db.SaveChangesAsync();
         }
     }
 }

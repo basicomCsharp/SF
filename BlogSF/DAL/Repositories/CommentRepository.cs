@@ -1,8 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BlogSF.DAL.Repositories;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace BlogSF.DAL.Repositories
 {
-    public class CommentRepository : IBaseRepositories<Comment>
+    public class CommentRepository : ICommentRepositories//IBaseRepositories<Comment>
     {
         private readonly AppContext db;
         public CommentRepository(AppContext contex)
@@ -10,32 +17,35 @@ namespace BlogSF.DAL.Repositories
             this.db = contex;
         }
 
-        public IEnumerable<Comment> GetAll()
+        public async Task<IEnumerable<Comment>> GetAll()
         {
-            return db.Comments;
+            return await db.Comments.ToListAsync();
         }
 
-        public Comment Get(int id)
+        public async Task<Comment> Get(Guid id)
         {
-            return db.Comments.Find(id);
+            return await db.Comments.Where(u => u.Id == id).FirstOrDefaultAsync();            
         }
 
 
-        public void Create(Comment comment)
+        public async Task Create(Comment comment)
         {
-            db.Comments.Add(comment);
-            db.SaveChanges();
+            var entry = db.Entry(comment);
+            if (entry.State == EntityState.Detached)
+               _= db.Comments.AddAsync(comment);
+            await db.SaveChangesAsync();
         }
-        public void Update(Comment value)
+        public async Task Update(Comment value)
         {
             db.Entry(value).State = EntityState.Modified;
+            await db.SaveChangesAsync();
         }
-        public void Delete(int id)
+        public async Task Delete(Guid id)
         {
             Comment _comment = db.Comments.Find(id);
             if (_comment != null)
                 db.Comments.Remove(_comment);
-                db.SaveChanges();
+            await db.SaveChangesAsync();
         }
 
     }

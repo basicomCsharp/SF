@@ -17,8 +17,8 @@ namespace BlogSF
         public DbSet<Role> Roles { get; set; }
         public AppContext()
         {
-            Database.EnsureDeleted();
-            Database.EnsureCreated();
+           // Database.EnsureDeleted();
+           // Database.EnsureCreated();
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -30,7 +30,7 @@ namespace BlogSF
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(@"Data Source=C:\SF\Mvc\blog.db");//;Database=EF;Trusted_Connection=True;");            
+            optionsBuilder.UseSqlite(@"Data Source=C:\SF\Mvc\blog.db");            
         }
     }
 }

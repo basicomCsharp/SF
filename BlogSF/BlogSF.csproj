@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BLL\" />
+    <Folder Include="BLL\Controllers\" />
     <Folder Include="DAL\DB\" />
     <Folder Include="PLL\" />
   </ItemGroup>

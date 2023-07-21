@@ -18,5 +18,8 @@ namespace BlogSF
         public string Email { get; set; } = String.Empty;
         public string login { get; set; } = String.Empty;
         public string password { get; set; } = String.Empty;
+        
+        public List<Book> Books { get; set; } = new List<Book>();        
+        public List<Comment> Comments { get; set; } = new List<Comment>();
     }
 }
